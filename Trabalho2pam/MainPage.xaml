@@ -8,7 +8,17 @@
 
             <Entry x:Name="nomeEntry" Placeholder="Nome do Produto"/>
             <Entry x:Name="descricaoEntry" Placeholder="Descrição"/>
-            <Entry x:Name="categoriaEntry" Placeholder="Categoria"/>
+            <Picker x:Name="categoriaPicker" Title=" Selecione uma categoria">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alimentos</x:String>
+                        <x:String>Vestuario</x:String>
+                        <x:String>Eletronicos</x:String>
+                        <x:String>Outros</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+           
             <DatePicker x:Name="validadePicker" Format="dd/MM/yyyy"/>
             <Entry x:Name="precoEntry" Placeholder="Preço" Keyboard="Numeric"/>
 

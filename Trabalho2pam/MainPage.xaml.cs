@@ -17,7 +17,7 @@ namespace Trabalho2pam
         {
             string nome = nomeEntry.Text;
             string descricao = descricaoEntry.Text;
-            string categoria = categoriaEntry.Text;
+            string categoria = categoriaPicker.SelectedItem?.ToString() ?? "";
             DateTime? validade = validadePicker.Date;
 
             if (double.TryParse(precoEntry.Text, out double preco) && !string.IsNullOrWhiteSpace(nome))
@@ -27,12 +27,13 @@ namespace Trabalho2pam
                     Nome = nome,
                     Preco = preco,
                     Descricao = descricao,
-                    Categoria = categoria,
+                    Categoria = categoria,  
                     Validade = validade
                 });
 
                 mensagemLabel.Text = "Produto cadastrado com sucesso!";
-                nomeEntry.Text = precoEntry.Text = descricaoEntry.Text = categoriaEntry.Text = "";
+                nomeEntry.Text = precoEntry.Text = descricaoEntry.Text = categoriaPicker.SelectedItem.ToString() ?? "";
+                
             }
             else
             {
